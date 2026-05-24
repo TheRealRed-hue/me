@@ -11,7 +11,7 @@ const skills = [
   { icon: Code, name: 'Front-End Development', description: 'React, Next.js, TypeScript' },
   { icon: Palette, name: 'UI/UX Design', description: 'Interfaces modernas e intuitivas' },
   { icon: Layers, name: 'Design Systems', description: 'Componentes escaláveis' },
-  { icon: Sparkles, name: 'Animações', description: 'Framer Motion, GSAP' },
+  { icon: Sparkles, name: 'Motion in Websites', description: 'Framer Motion, GSAP' },
   { icon: Monitor, name: 'Responsividade', description: 'Mobile-first approach' },
   { icon: Cpu, name: 'IA Integrada', description: 'Assistência inteligente' },
 ]

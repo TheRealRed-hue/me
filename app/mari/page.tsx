@@ -8,7 +8,7 @@ import { ContactSection } from '@/components/sections/contact-section'
 import { Footer } from '@/components/footer'
 
 const skills = [
-  { icon: Brush, name: 'Ilustração Digital', description: 'Criações artísticas personalizadas' },
+  { icon: Brush, name: 'Design Digital', description: 'Criações artísticas personalizadas' },
   { icon: Heart, name: 'Arte Conceitual', description: 'Personagens e cenários únicos' },
   { icon: Flower2, name: 'Elementos Decorativos', description: 'Detalhes florais e orgânicos' },
   { icon: Feather, name: 'Traço Delicado', description: 'Estilo próprio e sensível' },
@@ -23,8 +23,8 @@ const works = [
     category: 'Ilustração',
   },
   {
-    title: 'Decorative Art',
-    description: 'Peças decorativas com elementos florais e orgânicos.',
+    title: 'Design Digital',
+    description: 'Desenhos e gravuras digitais com traço delicado e sensível.',
     category: 'Arte Digital',
   },
   {

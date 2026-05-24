@@ -9,7 +9,7 @@ const founders = [
     initial: 'M',
     name: 'Mariana',
     handle: '@mari',
-    role: 'ARTE DIGITAL & ILUSTRAÇÃO',
+    role: 'ARTE DIGITAL',
     description:
       'Responsável pela identidade visual e arte digital do estúdio. Transforma conceitos em ilustrações únicas com traço próprio e sensibilidade estética.',
     skills: ['Ilustração Digital', 'Arte Conceitual', 'Identidade Visual'],

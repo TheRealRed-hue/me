@@ -10,10 +10,8 @@ import { Footer } from '@/components/footer'
 const skills = [
   { icon: Palette, name: 'UI Design', description: 'Interfaces visualmente impactantes' },
   { icon: Sparkles, name: 'Arte Digital', description: 'Ilustrações e composições únicas' },
-  { icon: Star, name: 'Motion Design', description: 'Animações e visuais dinâmicos' },
   { icon: Moon, name: 'Estética Visual', description: 'Atmosferas cósmicas e artísticas' },
   { icon: Eye, name: 'Direção de Arte', description: 'Visão criativa para projetos' },
-  { icon: Wand2, name: 'Efeitos Visuais', description: 'Elementos gráficos imersivos' },
 ]
 
 const works = [
