@@ -1,8 +1,11 @@
 import type { Metadata } from 'next'
 import { Inter, Geist_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
+<<<<<<< HEAD
 import { LenisProvider } from '@/components/providers/lenis-provider'
 import { CustomCursor } from '@/components/ui/custom-cursor'
+=======
+>>>>>>> 5335aa480d6026ac1a1e676135624b78a736b404
 import './globals.css'
 
 const inter = Inter({ 
@@ -35,10 +38,14 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className={`${inter.variable} ${geistMono.variable} bg-background`}>
       <body className="font-sans antialiased">
+<<<<<<< HEAD
         <LenisProvider>
           <CustomCursor />
           {children}
         </LenisProvider>
+=======
+        {children}
+>>>>>>> 5335aa480d6026ac1a1e676135624b78a736b404
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>

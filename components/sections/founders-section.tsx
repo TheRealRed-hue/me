@@ -1,5 +1,6 @@
 'use client'
 
+<<<<<<< HEAD
 import { useEffect, useRef } from 'react'
 import Link from 'next/link'
 import { gsap } from 'gsap'
@@ -7,6 +8,11 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { isMobile } from '@/hooks/use-reduced-motion'
 
 gsap.registerPlugin(ScrollTrigger)
+=======
+import { motion, useInView } from 'framer-motion'
+import { useRef } from 'react'
+import Link from 'next/link'
+>>>>>>> 5335aa480d6026ac1a1e676135624b78a736b404
 
 const founders = [
   {
@@ -14,7 +20,12 @@ const founders = [
     name: 'Mariana',
     handle: '@mari',
     role: 'ARTE DIGITAL',
+<<<<<<< HEAD
     description: 'Responsável pela identidade visual e arte digital do estúdio. Transforma conceitos em ilustrações únicas com traço próprio e sensibilidade estética.',
+=======
+    description:
+      'Responsável pela identidade visual e arte digital do estúdio. Transforma conceitos em ilustrações únicas com traço próprio e sensibilidade estética.',
+>>>>>>> 5335aa480d6026ac1a1e676135624b78a736b404
     skills: ['Ilustração Digital', 'Arte Conceitual', 'Identidade Visual'],
     href: '/mari',
     color: 'from-pink-500/20 to-rose-500/20',
@@ -26,7 +37,12 @@ const founders = [
     name: 'Zensh',
     handle: '@zensh',
     role: 'DESIGN & ARTE DIGITAL',
+<<<<<<< HEAD
     description: 'Co-responsável pela produção visual e design do estúdio. Especialista em criar composições visuais que unem estética e funcionalidade.',
+=======
+    description:
+      'Co-responsável pela produção visual e design do estúdio. Especialista em criar composições visuais que unem estética e funcionalidade.',
+>>>>>>> 5335aa480d6026ac1a1e676135624b78a736b404
     skills: ['UI Design', 'Arte Digital', 'Motion & Visual'],
     href: '/zensh',
     color: 'from-violet-500/20 to-indigo-500/20',
@@ -38,7 +54,12 @@ const founders = [
     name: 'Red',
     handle: '@mythicthefirst',
     role: 'DEV & DIGITAL DESIGNER',
+<<<<<<< HEAD
     description: 'Fundador e desenvolvedor front-end do estúdio. Constrói as experiências digitais que dão vida às ideias — do código à interface final.',
+=======
+    description:
+      'Fundador e desenvolvedor front-end do estúdio. Constrói as experiências digitais que dão vida às ideias — do código à interface final.',
+>>>>>>> 5335aa480d6026ac1a1e676135624b78a736b404
     skills: ['Front-End Dev', 'UI/UX Design', 'IA Integrada'],
     href: '/red',
     color: 'from-cyan-500/20 to-blue-500/20',
@@ -48,6 +69,7 @@ const founders = [
 ]
 
 export function FoundersSection() {
+<<<<<<< HEAD
   const sectionRef = useRef<HTMLElement>(null)
 
   useEffect(() => {
@@ -135,10 +157,20 @@ export function FoundersSection() {
     <section
       ref={sectionRef}
       id="fundadores"
+=======
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, margin: '-100px' })
+
+  return (
+    <section
+      id="fundadores"
+      ref={ref}
+>>>>>>> 5335aa480d6026ac1a1e676135624b78a736b404
       className="py-24 md:py-32 relative"
       aria-label="Fundadores da KZR Studios"
     >
       <div className="mx-auto max-w-7xl px-6">
+<<<<<<< HEAD
         <div className="founders-header will-change-transform">
           <span className="text-sm font-medium text-primary tracking-widest">FUNDADORES</span>
           <h2 className="text-3xl md:text-5xl font-bold mt-4 mb-4 text-balance">
@@ -160,6 +192,54 @@ export function FoundersSection() {
                 <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${founder.color} flex items-center justify-center mb-4`}>
                   <span className={`text-2xl font-bold ${founder.textColor}`}>{founder.initial}</span>
                 </div>
+=======
+        <motion.span
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5 }}
+          className="text-sm font-medium text-primary tracking-widest"
+        >
+          FUNDADORES
+        </motion.span>
+
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="text-3xl md:text-5xl font-bold mt-4 mb-4 text-balance"
+        >
+          As pessoas por trás da
+          <span className="text-primary"> KZR</span>
+        </motion.h2>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="text-muted-foreground max-w-2xl mb-12"
+        >
+          Três fundadores, um estúdio. Cada um trazendo sua especialidade para criar algo maior.
+        </motion.p>
+
+        <div className="grid md:grid-cols-3 gap-6">
+          {founders.map((founder, index) => (
+            <motion.div
+              key={founder.name}
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
+            >
+              <Link
+                href={founder.href}
+                className={`block h-full p-6 rounded-2xl glass border border-transparent ${founder.borderColor} transition-all duration-300 group`}
+              >
+                <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${founder.color} flex items-center justify-center mb-4`}>
+                  <span className={`text-2xl font-bold ${founder.textColor}`}>
+                    {founder.initial}
+                  </span>
+                </div>
+
+>>>>>>> 5335aa480d6026ac1a1e676135624b78a736b404
                 <h3 className="text-xl font-semibold text-foreground mb-1 group-hover:text-primary transition-colors">
                   {founder.name}
                 </h3>
@@ -173,15 +253,29 @@ export function FoundersSection() {
                 <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
                   {founder.description}
                 </p>
+<<<<<<< HEAD
                 <ul className="flex flex-wrap gap-2" aria-label={`Áreas de ${founder.name}`}>
                   {founder.skills.map((skill) => (
                     <li key={skill} className="text-xs px-3 py-1.5 rounded-full bg-secondary/50 text-muted-foreground">
+=======
+
+                <ul className="flex flex-wrap gap-2" aria-label={`Áreas de ${founder.name}`}>
+                  {founder.skills.map((skill) => (
+                    <li
+                      key={skill}
+                      className="text-xs px-3 py-1.5 rounded-full bg-secondary/50 text-muted-foreground"
+                    >
+>>>>>>> 5335aa480d6026ac1a1e676135624b78a736b404
                       {skill}
                     </li>
                   ))}
                 </ul>
               </Link>
+<<<<<<< HEAD
             </div>
+=======
+            </motion.div>
+>>>>>>> 5335aa480d6026ac1a1e676135624b78a736b404
           ))}
         </div>
       </div>

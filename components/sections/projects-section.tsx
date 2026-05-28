@@ -1,5 +1,6 @@
 'use client'
 
+<<<<<<< HEAD
 import { useEffect, useRef } from 'react'
 import { ExternalLink, Github } from 'lucide-react'
 import { gsap } from 'gsap'
@@ -7,6 +8,11 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { isMobile } from '@/hooks/use-reduced-motion'
 
 gsap.registerPlugin(ScrollTrigger)
+=======
+import { motion, useInView } from 'framer-motion'
+import { useRef } from 'react'
+import { ExternalLink, Github } from 'lucide-react'
+>>>>>>> 5335aa480d6026ac1a1e676135624b78a736b404
 
 const projects = [
   {
@@ -48,6 +54,7 @@ const projects = [
 ]
 
 export function ProjectsSection() {
+<<<<<<< HEAD
   const sectionRef = useRef<HTMLElement>(null)
 
   useEffect(() => {
@@ -100,10 +107,20 @@ export function ProjectsSection() {
     <section
       ref={sectionRef}
       id="projetos"
+=======
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, margin: '-100px' })
+
+  return (
+    <section
+      id="projetos"
+      ref={ref}
+>>>>>>> 5335aa480d6026ac1a1e676135624b78a736b404
       className="py-24 md:py-32 relative"
       aria-label="Projetos selecionados"
     >
       <div className="mx-auto max-w-7xl px-6">
+<<<<<<< HEAD
         <div className="projects-header will-change-transform">
           <span className="text-sm font-medium text-primary tracking-widest">PORTFÓLIO</span>
           <h2 className="text-3xl md:text-5xl font-bold mt-4 mb-4 text-balance">
@@ -120,11 +137,54 @@ export function ProjectsSection() {
             <article
               key={project.title}
               className="project-item p-6 rounded-2xl glass border border-transparent hover:border-primary/30 transition-all duration-300 group will-change-transform"
+=======
+        <motion.span
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5 }}
+          className="text-sm font-medium text-primary tracking-widest"
+        >
+          PORTFÓLIO
+        </motion.span>
+
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="text-3xl md:text-5xl font-bold mt-4 mb-4 text-balance"
+        >
+          Projetos <span className="text-primary">Selecionados</span>
+        </motion.h2>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="text-muted-foreground max-w-2xl mb-12"
+        >
+          Uma seleção dos meus trabalhos mais recentes e impactantes.
+        </motion.p>
+
+        <div className="grid md:grid-cols-2 gap-6">
+          {projects.map((project, index) => (
+            <motion.article
+              key={project.title}
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
+              className="p-6 rounded-2xl glass border border-transparent hover:border-primary/30 transition-all duration-300 group"
+>>>>>>> 5335aa480d6026ac1a1e676135624b78a736b404
             >
               <div className="flex items-start justify-between mb-4">
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+<<<<<<< HEAD
                     <span className="text-xl font-bold text-primary">{project.initial}</span>
+=======
+                    <span className="text-xl font-bold text-primary">
+                      {project.initial}
+                    </span>
+>>>>>>> 5335aa480d6026ac1a1e676135624b78a736b404
                   </div>
                   <div className="flex gap-2">
                     <a
@@ -149,6 +209,7 @@ export function ProjectsSection() {
                   </span>
                 )}
               </div>
+<<<<<<< HEAD
               <h3 className="text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
                 {project.title}
               </h3>
@@ -156,11 +217,31 @@ export function ProjectsSection() {
               <div className="flex flex-wrap gap-2">
                 {project.tech.map((tech) => (
                   <span key={tech} className="text-xs px-3 py-1.5 rounded-full bg-secondary/50 text-muted-foreground">
+=======
+
+              <h3 className="text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
+                {project.title}
+              </h3>
+              <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
+                {project.description}
+              </p>
+
+              <div className="flex flex-wrap gap-2">
+                {project.tech.map((tech) => (
+                  <span
+                    key={tech}
+                    className="text-xs px-3 py-1.5 rounded-full bg-secondary/50 text-muted-foreground"
+                  >
+>>>>>>> 5335aa480d6026ac1a1e676135624b78a736b404
                     {tech}
                   </span>
                 ))}
               </div>
+<<<<<<< HEAD
             </article>
+=======
+            </motion.article>
+>>>>>>> 5335aa480d6026ac1a1e676135624b78a736b404
           ))}
         </div>
       </div>

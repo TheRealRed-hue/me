@@ -1,5 +1,6 @@
 'use client'
 
+<<<<<<< HEAD
 import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import { AnimatePresence, motion } from 'framer-motion'
@@ -8,6 +9,12 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
+=======
+import { useState, useEffect } from 'react'
+import Link from 'next/link'
+import { motion, AnimatePresence } from 'framer-motion'
+import { Menu, X } from 'lucide-react'
+>>>>>>> 5335aa480d6026ac1a1e676135624b78a736b404
 
 const navItems = [
   { label: 'Sobre', href: '/#sobre' },
@@ -21,6 +28,7 @@ const navItems = [
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+<<<<<<< HEAD
   const navRef = useRef<HTMLElement>(null)
 
   // Entrada inicial
@@ -59,10 +67,28 @@ export function Navbar() {
     <header
       ref={navRef}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 will-change-transform ${
+=======
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50)
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  return (
+    <motion.header
+      initial={{ y: -100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.6, ease: 'easeOut' }}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+>>>>>>> 5335aa480d6026ac1a1e676135624b78a736b404
         isScrolled ? 'glass py-3' : 'bg-transparent py-5'
       }`}
     >
       <nav className="mx-auto max-w-7xl px-6 flex items-center justify-between" aria-label="Navegação principal">
+<<<<<<< HEAD
         <Link href="/" className="flex items-center gap-1 group" aria-label="KZR Studios — Início">
           <span className="text-xl font-bold text-primary transition-all duration-300 group-hover:glow-text-primary">KZR</span>
           <span className="text-xs font-medium text-muted-foreground tracking-widest">STUDIOS</span>
@@ -72,6 +98,29 @@ export function Navbar() {
           {navItems.map((item) => (
             <li key={item.href}>
               <Link href={item.href} className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200">
+=======
+        <Link 
+          href="/" 
+          className="flex items-center gap-1 group"
+          aria-label="KZR Studios — Início"
+        >
+          <span className="text-xl font-bold text-primary transition-all duration-300 group-hover:glow-text-primary">
+            KZR
+          </span>
+          <span className="text-xs font-medium text-muted-foreground tracking-widest">
+            STUDIOS
+          </span>
+        </Link>
+
+        {/* Desktop Navigation */}
+        <ul className="hidden md:flex items-center gap-8">
+          {navItems.map((item) => (
+            <li key={item.href}>
+              <Link
+                href={item.href}
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200"
+              >
+>>>>>>> 5335aa480d6026ac1a1e676135624b78a736b404
                 {item.label}
               </Link>
             </li>
@@ -87,6 +136,10 @@ export function Navbar() {
           </Link>
         </div>
 
+<<<<<<< HEAD
+=======
+        {/* Mobile Menu Button */}
+>>>>>>> 5335aa480d6026ac1a1e676135624b78a736b404
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           className="md:hidden p-2 text-foreground"
@@ -96,6 +149,10 @@ export function Navbar() {
         </button>
       </nav>
 
+<<<<<<< HEAD
+=======
+      {/* Mobile Menu */}
+>>>>>>> 5335aa480d6026ac1a1e676135624b78a736b404
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
@@ -129,6 +186,10 @@ export function Navbar() {
           </motion.div>
         )}
       </AnimatePresence>
+<<<<<<< HEAD
     </header>
+=======
+    </motion.header>
+>>>>>>> 5335aa480d6026ac1a1e676135624b78a736b404
   )
 }
