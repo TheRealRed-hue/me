@@ -88,11 +88,7 @@
     @apply bg-background text-foreground;
   }
   html {
-<<<<<<< HEAD
     
-=======
-    scroll-behavior: smooth;
->>>>>>> 5335aa480d6026ac1a1e676135624b78a736b404
   }
 }
 
@@ -157,7 +153,6 @@
   opacity: 0.03;
   pointer-events: none;
 }
-<<<<<<< HEAD
 
 /* ── Cinematográfico: Mobile height fix ── */
 .hero-full-height {
@@ -188,5 +183,3 @@ section {
   content-visibility: auto;
   contain-intrinsic-size: 0 600px;
 }
-=======
->>>>>>> 5335aa480d6026ac1a1e676135624b78a736b404
